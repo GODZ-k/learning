@@ -89,24 +89,26 @@
 // tanmay.changeUsername("Amit")
 // console.log(tanmay)
 // ==========================>
-class user {
-    constructor(name, age) {
-        this.role = 'user';
-        this.name = name;
-        this.age = age;
-        this.role = this.role;
-    }
-}
-class Admin extends user {
-    constructor(name) {
-        super(name);
-    }
-    getValue() {
-        console.log(this.name, this.role);
-    }
-}
-const tanmay = new Admin('tanmay');
-tanmay.getValue();
+// class user {
+//     private role:string = 'user';
+//     public readonly name;
+//     public age;
+//     constructor(name:string,age:number){
+//         this.name = name;
+//         this.age = age;
+//         this.role =  this.role
+//     }
+// }
+// class Admin extends user{
+//     constructor(name:string){
+//         super(name);
+//     }
+//     getValue(){
+//         console.log(this.name ,  this.role)
+//     }
+// }
+// const tanmay  = new Admin('tanmay')
+// tanmay.getValue()
 // static ==============>
 // class shery {
 //     static version = 1.1
@@ -139,16 +141,16 @@ tanmay.getValue();
 // console.log(array1)
 // generics =================>
 // generics in function -
-function array(a) {
-    // console.log(a)
-    // return 12 as T;
-    return 12;
-}
-function log(a, b, c) {
-    console.log(a, b, c);
-}
-array(12);
-log("Tanmay", "Tanmay", 13);
+// function array<T>(a:T):T{
+//     // console.log(a)
+//     // return 12 as T;
+//     return <T>12;
+// }
+// function log<T>(a:T ,b:string ,c:number){
+//     console.log(a,b,c)
+// }
+// array<number>(12)
+// log<string>("Tanmay","Tanmay",13)
 // generics in interface ----
 // interface User<T>{
 //     name:string,
@@ -200,3 +202,26 @@ log("Tanmay", "Tanmay", 13);
 //     }
 // }
 // valueGet(v2)
+// 
+// function extractNumbers(str) {
+//     let result = "";
+//     for (let i = 0; i < str.length; i++) {
+//         // Check if the character is a digit
+//         if (!isNaN(str[i]) && str[i] !== " ") {
+//             result += str[i];
+//         }
+//     }
+//     return result || null; // Return null if no digits are found
+// }
+const str = "1Hello2   &* how  are y5ou";
+function extractNumbers(str) {
+    let result = "";
+    for (let i = 0; i < str.length; i++) {
+        if (!isNaN(str[i]) && str[i] !== " ") {
+            result += str[i];
+        }
+    }
+    return result;
+}
+const result = extractNumbers(str);
+console.log(result);
